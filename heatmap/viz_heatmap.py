@@ -18,7 +18,8 @@ def plot(in_file, out_file, rotate_y=0, rotate_x=0):
     df=df[:, 1:]
     df = df.astype(np.float)
 
-    ax = sns.heatmap(df, linewidth=0.5)
+    ax = sns.heatmap(df, annot=True, fmt='.2f', linewidth=0.5,cmap='RdYlGn',
+                     annot_kws={"size": 5})
     y_labels=list(col_header)
     x_labels = list(row_header)
     ax.set_yticklabels(y_labels)
@@ -33,10 +34,26 @@ def plot(in_file, out_file, rotate_y=0, rotate_x=0):
 
 
 if __name__ == "__main__":
-    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_rating.csv"
-    outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_rating.png"
-    plot(infile, outfile,0,0)
+    # infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_rating.csv"
+    # outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_rating.png"
+    # plot(infile, outfile,0,0)
+    #
+    # infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_words.csv"
+    # outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_length.png"
+    # plot(infile, outfile,0,90)
 
-    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_words.csv"
-    outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_length.png"
-    plot(infile, outfile,0,90)
+    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_rating_real.csv"
+    outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_rating_real.png"
+    plot(infile, outfile, 0, 0)
+
+    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_rating_fake.csv"
+    outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_rating_fake.png"
+    plot(infile, outfile, 0, 0)
+
+    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_words_real.csv"
+    outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_length_real.png"
+    plot(infile, outfile, 0, 90)
+
+    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_dist_words_fake.csv"
+    outfile = "/home/zz/Work/data/amazon/labelled/stats/heatmap_length_fake.png"
+    plot(infile, outfile, 0, 90)

@@ -32,6 +32,10 @@ def plot(in_file,outfolder):
         plt.clf()
 
 if __name__ == "__main__":
-    infile="/home/zz/Work/data/amazon/labelled/small/stats_descriptive_rating.json"
-    outfolder="/home/zz/Work/data/amazon/labelled/stats/boxplots"
+    # infile="/home/zz/Work/data/amazon/labelled/stats/stats_descriptive_rating.json"
+    # outfolder="/home/zz/Work/data/amazon/labelled/stats/boxplots_rating"
+    # plot(infile, outfolder)
+
+    infile = "/home/zz/Work/data/amazon/labelled/stats/stats_descriptive_words.json"
+    outfolder = "/home/zz/Work/data/amazon/labelled/stats/boxplots_length"
     plot(infile, outfolder)
